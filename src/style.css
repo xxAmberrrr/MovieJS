@@ -1,0 +1,32 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#dataDisplay {
+  margin-left: 500px;
+  position: absolute;
+  top: 0px;
+  right: auto;
+}
+
+#buttonsBox {
+  width: 400px;
+  position: absolute;
+  float: left;
+}
+
+.subjectButton {
+  font-size: 35px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.19);
+  background-color: #104E8B;
+  color: #FFFFFF;
+  border: none;
+}
+
+.titleButton {
+  font-size: 18px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #ffa500;
+  margin: 2px;
+}

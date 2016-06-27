@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="src/style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+		<title>Eindopdracht</title>
+	</head>
+
+	<body>
+		<div id="buttonsBox">
+			<div id="movieButtons">
+				<a href="#" data-id="0"><input class="subjectButton" type="button" value="Movies"/></a>
+				<br><br>
+				<a href="#" data-id="1"><input class="titleButton" type="button" value="Sisters(2015)"/></a>
+				<br>
+				<a href="#" data-id="2"><input class="titleButton" type="button" value="Joy(2015)"/></a>
+				<br>
+				<a href="#" data-id="3"><input class="titleButton" type="button" value="The 5th wave(2016)"/></a>
+				<br>
+				<a href="#" data-id="4"><input class="titleButton" type="button" value="Paranormal Activity: The Ghost Dimension(2015)"/></a>
+				<br>
+				<a href="#" data-id="5"><input class="titleButton" type="button" value="Fashion Chicks(2015)"/></a>
+				<br>
+				<a href="#" data-id="6"><input class="titleButton" type="button" value="The Conjuring 2(2016)"/></a>
+			</div>
+
+			<br>
+			<br>
+			<br>
+
+			<div id="genreButtons">
+				<a href="#" data-id="0"><input class="subjectButton" type="button" value="Genres"/></a>
+				<br><br>
+				<a href="#" data-id="1"><input class="titleButton" type="button" value="Comedy"/></a>
+				<br>
+				<a href="#" data-id="2"><input class="titleButton" type="button" value="Horror"/></a>
+				<br>
+				<a href="#" data-id="3"><input class="titleButton" type="button" value="Thriller"/></a>
+				<br>
+				<a href="#" data-id="4"><input class="titleButton" type="button" value="Drama"/></a>
+			</div>
+
+			<br>
+			<br>
+			<br>
+
+			<div id="actorButtons">
+				<a href="#" data-id="0"><input class="subjectButton" type="button" value="Actors"/></a>
+				<br><br>
+				<a href="#" data-id="1"><input class="titleButton" type="button" value="Patrick Dempsey"/></a>
+				<br>
+				<a href="#" data-id="2"><input class="titleButton" type="button" value="Ellen Pompeo"/></a>
+				<br>
+				<a href="#" data-id="3"><input class="titleButton" type="button" value="Daniel Radcliff"/></a>
+				<br>
+				<a href="#" data-id="4"><input class="titleButton" type="button" value="Theo James"/></a>
+			</div>
+		</div>
+
+		<br><br>
+
+		<div id="dataDisplay"></div>
+
+		<script id="template-movies" type="text/template">
+			<% _.each(obj.models, function(movieDataView){%>
+				<h3><%=movieDataView.attributes.name%></h3>
+				<p>
+					<%=movieDataView.attributes.description%>
+					<br>
+					<%=movieDataView.attributes.date%>
+					<br>
+					<img src="<%=movieDataView.attributes.image%>" alt="Poster" height="400" width="350">
+				</p>
+			<%})%>
+		</script>
+
+		<script id="template-genres" type="text/template">
+			<% _.each(obj.models, function(genreDataView){%>
+				<h3><%=genreDataView.attributes.name%></h3>
+				<p>
+					<%=genreDataView.attributes.description%>
+				</p>
+			<%})%>
+		</script>
+
+		<script id="template-actors" type="text/template">
+			<% _.each(obj.models, function(actorDataView){%>
+				<h3><%=actorDataView.attributes.firstName%> <%=actorDataView.attributes.lastName%></h3>
+				<p>
+					<img src="<%=actorDataView.attributes.actorImage%>" alt="Actor" height="400" width="350">
+					<br>
+					<h4>Known From:</h4>
+					<%=actorDataView.attributes.knownFrom%>
+					<br>
+					<img src="<%=actorDataView.attributes.moviePoster%>" alt="Poster" height="400" width="350">
+				</p>
+			<%})%>
+		</script>
+
+		<script charset="utf-8" src="./dist/bundle.js"></script>
+	</body>
+</html>
