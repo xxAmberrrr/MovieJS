@@ -60,8 +60,11 @@
 
 		<br><br>
 
+		/** This is a box where the data is going to be in. */
 		<div id="dataDisplay"></div>
 
+
+		/** These scripts are for the data display. In these script I tell the application which data has to be shown. */
 		<script id="template-movies" type="text/template">
 			<% _.each(obj.models, function(movieDataView){%>
 				<h3><%=movieDataView.attributes.name%></h3>
